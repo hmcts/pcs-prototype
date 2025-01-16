@@ -4,3 +4,17 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner govuk-clearfix" style="display: flex; align-items: center; margin-bottom: 5px;">
+    <p class="govuk-phase-banner__content" style="margin: 0;">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Discovery
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service. Help us improve it and <a class="govuk-link" href="/feedback">give your feedback</a>.
+        </span>
+    </p>
+    <a class="govuk-link govuk-phase-banner__link" href="#" style="margin-left: auto;">Cymraeg</a>
+</div>
+{% endblock %}
