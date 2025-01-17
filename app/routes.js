@@ -27,6 +27,9 @@ router.get('/view-claimant', (req, res) => {
             propertyAddress: config.propertyAddress,
             claimantName: config.claimantName,
             claimantAddress: config.claimantAddress
+        }
+    );
+});
 
 router.get('/view-the-claim', (req, res) => {
     res.render('view-the-claim',
