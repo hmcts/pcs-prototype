@@ -8,9 +8,17 @@ const addFilter = govukPrototypeKit.views.addFilter
 
 // Add your filters here
 
+
 addFilter('splitAddress', (address) => {
     if (!address) return '';
     const addressParts = address.split(',');
     return addressParts.join('<br>');
 });
 
+
+addFilter('date', (relativeDays = 0) => {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + relativeDays);
+    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    return currentDate.toLocaleDateString('en-GB', options);
+});
