@@ -28,3 +28,12 @@ router.get('/view-the-claim', (req, res) => {
         }
     );
 });
+
+router.get('/view-orders', (req, res) => {
+    res.render('view-orders-and-notices',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress
+        }
+    );
+});
