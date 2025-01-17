@@ -20,6 +20,15 @@ router.get('/', (req, res) => {
     );
 });
 
+router.get('/view-the-claim', (req, res) => {
+    res.render('view-the-claim',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress
+        }
+    );
+});
+
 router.get('/feedback', (req, res) => {
     res.render('feedback',
         {
