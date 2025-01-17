@@ -1,3 +1,10 @@
 {
-  "serviceName": "Service name goes here"
+  "serviceName": "Possession Claims",
+  "caseNumber": "1234 4321 1234 4321",
+  "propertyAddress": "Flat 25, 2 Santa Claus Way, North Pole, H0 H0H0",
+  "claimantName": "North Pole Homes",
+  "claimantAddress": "Santa's Grotto, Reindeerland, XM4 5HQ",
+  "defendantName1": "Buddy Elf",
+  "defendantName2": "Rudolph Reindeer",
+  "defendantName3": "Dasher Reindeer"
 }
