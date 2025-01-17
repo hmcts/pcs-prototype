@@ -19,3 +19,12 @@ router.get('/', (req, res) => {
         }
     );
 });
+
+router.get('/feedback', (req, res) => {
+    res.render('feedback',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress
+        }
+    );
+});

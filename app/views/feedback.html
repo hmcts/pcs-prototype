@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Feedback
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Heading Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb" >
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/">Home</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">Feedback</li>
+            </ol>
+        </nav>
+        <h1 class="govuk-heading-l">Give feedback on Possession Claims</h1>
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+
+    <!-- Main Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m" style="margin-bottom: 10px;">Satisfaction survey</h2>
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h3 class="govuk-heading-s" style="margin-bottom: 5px;">
+                        Overall, how did you feel about the service you received today?
+                    </h3>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="howDoYouFeel" name="howDoYouFeel" type="radio"
+                            value="very-satisfied">
+                        <label class="govuk-label govuk-radios__label" for="howDoYouFeel">
+                            Very satisfied
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="howDoYouFeel-2" name="howDoYouFeel" type="radio"
+                            value="satisfied">
+                        <label class="govuk-label govuk-radios__label" for="howDoYouFeel-2">
+                            Satisfied
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="howDoYouFeel-3" name="howDoYouFeel" type="radio"
+                            value="neither-satisfied-or-dissatisfied">
+                        <label class="govuk-label govuk-radios__label" for="howDoYouFeel-3">
+                            Neither satisfied or dissatisfied
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="howDoYouFeel-4" name="howDoYouFeel" type="radio"
+                            value="dissatisfied">
+                        <label class="govuk-label govuk-radios__label" for="howDoYouFeel-4">
+                            Dissatisfied
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="howDoYouFeel-5" name="howDoYouFeel" type="radio"
+                            value="very-dissatisfied">
+                        <label class="govuk-label govuk-radios__label" for="howDoYouFeel-5">
+                            Very dissatisfied
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="800">
+            <h3 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--s" for="with-hint">
+                    How could we improve this service?
+                </label>
+            </h3>
+            <div id="with-hint-hint" class="govuk-hint">
+                Do not include personal or financial information like your National Insurance number or credit
+                card numbers.
+            </div>
+            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="withHint" rows="5"
+                aria-describedby="with-hint-info with-hint-hint"></textarea>
+            <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                You can enter up to 800 characters
+            </div>
+        </div>
+        <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Send feedback
+        </a>
+    </div>
+</div>
+{% endblock %}
