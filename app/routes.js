@@ -19,3 +19,12 @@ router.get('/', (req, res) => {
         }
     );
 });
+
+router.get('/view-hearings', (req, res) => {
+    res.render('view-hearings',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+        }
+    );
+});
