@@ -19,7 +19,6 @@ router.get('/', (req, res) => {
         }
     );
 });
-
 router.get('/view-claimant', (req, res) => {
     res.render('view-information-about-the-claimant',
         {

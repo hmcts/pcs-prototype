@@ -8,7 +8,8 @@ const addFilter = govukPrototypeKit.views.addFilter
 
 // Add your filters here
 
-addFilter('splitAddress', (address) => {
+
+addFilter('splitAddress',(address) => {
     if (!address) return '';
     const addressParts = address.split(',');
     return addressParts.join('<br>');
