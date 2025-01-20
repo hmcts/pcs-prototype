@@ -19,6 +19,16 @@ router.get('/', (req, res) => {
         }
     );
 });
+router.get('/view-claimant', (req, res) => {
+    res.render('view-information-about-the-claimant',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+            claimantName: config.claimantName,
+            claimantAddress: config.claimantAddress
+        }
+    );
+});
 
 router.get('/view-the-claim', (req, res) => {
     res.render('view-the-claim',
