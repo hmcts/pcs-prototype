@@ -47,7 +47,7 @@
                 <td class="govuk-table__cell">{{ claimantName }}</td>
             </tr>
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Business Address</td>
+                <td class="govuk-table__cell">claimant Address</td>
                 <td class="govuk-table__cell">
                     {{ claimantAddress | splitAddress | safe }}
                 </td>
@@ -59,8 +59,8 @@
                 </td>
             </tr>
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Date claim lodged</td>
-                <td class="govuk-table__cell">{{ -5 | date }}</td>
+                <td class="govuk-table__cell">Email</td>
+                <td class="govuk-table__cell">claimant@email.com</td>
             </tr>
             </tbody>
         </table>
@@ -71,9 +71,6 @@
         </div>
         <details class="govuk-details">
             <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    If you cannot find a document you are looking for in this section
-                </span>
             </summary>
             <div class="govuk-details__text">
                 Please call our helpline at 123-456-7890 or email help@example.com.
