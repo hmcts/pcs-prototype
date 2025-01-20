@@ -34,7 +34,7 @@
     </div>
 
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-2"
-         data-module="govuk-notification-banner">
+         data-module="govuk-notification-banner" style="margin-bottom: 20px;">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-2">
           Important
@@ -44,6 +44,21 @@
         <p>
           You have received a message about this case which you have not yet viewed.
           Click <a class="govuk-notification-banner__link" href="#">here</a> to check your messages.
+        </p>
+      </div>
+    </div>
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-3"
+         data-module="govuk-notification-banner" style="margin-bottom: 20px;">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-3">
+          New Message Waiting
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p>
+          Your claim has not yet been issued, in order to proceed you must pay the claim fee of {{ claimFee }}.
+          <a class="govuk-notification-banner__link" href="/pay-fee">Pay the claim fee</a>.
         </p>
       </div>
     </div>
