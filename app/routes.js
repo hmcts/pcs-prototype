@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
             caseNumber: config.caseNumber,
             claimantName: config.claimantName,
             propertyAddress: config.propertyAddress,
-            defendantName1: config.defendantName1
+            defendantName1: config.defendantName1,
+            claimFee: config.claimFee,
         }
     );
 });
