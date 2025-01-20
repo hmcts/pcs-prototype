@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Claimant information
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Heading Content -->
+     
+    <div class="govuk-grid-column-two-thirds">
+        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb" >
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/">Home</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">Upload your documents</li>
+            </ol>
+        </nav>
+        <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Upload your documents</h1>
+        <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
+        <p class="govuk-body">Property address: {{ propertyAddress }}</p>
+        <p>Check the order the court sent you for what documents you need to upload for your case.</p>
+        <p>You cannot withdraw a document once you have submitted it. If you want to
+        add more information to something you have already submitted, you can
+        upload the document again.You should add a version number to the name, for
+            example 'version2'.</p>
+        <p>The other parties will be able to see the documents you have uploaded, and
+        you will be able to see their documents.</p>
+        <h2 class="govuk-heading-l" style="margin-bottom: 10px;">Deadlines for uploading documents</h2>
+        <p>Check the order the court sent you for deadlines for uploading your
+            documents.</p>
+        <p>After the deadline, you will have to <a href="" >apply to the court</a> if you want any new
+            document to be used at the trial or hearing.</p>
+        <p>You do not have to upload all your documents at once.You can return to
+            upload them later.</p>
+        <h2 class="govuk-heading-l" style="margin-bottom: 10px;">Before you upload your documents</h2>
+        <p>Before you upload the document, give it a name that tells the court what it is,
+        for example 'Witness statement by Jane Smith'.</p>
+        <p>Each document must be less than 100MB. You can upload the following file
+        types: Word,Excel,PowerPoint,PDF,RTF,TXT,CSV,JPG,JPEG,PNG,BMP,
+        TIF,TIFF.</p>
+        <p>You do not have to upload all your documents at once.You can return to
+            upload them later.</p>
+        <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Start now >
+        </a>
+
+<!--        <hr class="govuk-section-break govuk-section-break&#45;&#45;m govuk-section-break&#45;&#45;visible">-->
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+
+    <!-- Main Content -->
+
+</div>
+{% endblock %} 
