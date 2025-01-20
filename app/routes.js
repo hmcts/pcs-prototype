@@ -29,3 +29,21 @@ router.get('/view-claimant', (req, res) => {
         }
     );
 });
+
+router.get('/view-the-claim', (req, res) => {
+    res.render('view-the-claim',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress
+        }
+    );
+});
+
+router.get('/view-hearings', (req, res) => {
+    res.render('view-hearings',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+        }
+    );
+});
