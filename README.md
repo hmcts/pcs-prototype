@@ -9,4 +9,3 @@ Node version >= 20
 ## To run prototype
 
 ``npm run dev``
-
