@@ -60,6 +60,15 @@ router.get('/view-hearings', (req, res) => {
     );
 });
 
+router.get('/feedback', (req, res) => {
+    res.render('feedback',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress
+        }
+    );
+});
+
 router.get('/pay-fee', (req, res) => {
     res.render('pay-fee',
         {
