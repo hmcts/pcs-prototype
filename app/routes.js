@@ -48,6 +48,7 @@ router.get('/view-orders', (req, res) => {
         }
     );
 });
+
 router.get('/view-hearings', (req, res) => {
     res.render('view-hearings',
         {
