@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Application start
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Heading Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Try the new online service</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">
+            We are building a new service. Different designs are being tested and changed
+            based on feedback from users.
+        </p>
+        <p class="govuk-body">
+            You will be asked some questions to check you are eligible to use this service.
+        </p>
+        <p class="govuk-body">
+            <strong>Claiming interest: </strong>
+            You can only use this service if any claim for interest is made at the
+            same rate and from the same date. To claim interest at different rates or for
+            different periods of time, you should issue a claim on paper. More information
+            on how to do this can be found at
+            <a href="#">
+                Make a court claim for money: make a claim - GOV.UK (www.gov.uk)
+            </a>.
+        </p>
+        <div style="padding-top: 20px;">
+            <a href="/submit-application-language"
+            role="button"
+            draggable="false"
+            class="govuk-button"
+            data-module="govuk-button">
+                Continue
+            </a>
+        </div>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Contact us for help
+                    </span>
+            </summary>
+            <div class="govuk-details__text">
+                Please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Dashboard
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <!-- Heading Content -->
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Make a claim</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-s">
+    Application complete
+  </h2>
+    <p class="govuk-body">
+      You have completed 0 of 7 sections.
+    </p>
+    <p class="govuk-body">
+      After you have completed all the actions, you will be taken to a page where you can check your answers before
+      submitting.
+    </p>
+    <!-- Tags -->
+    {% set incomplete = { tag: { text: "Incomplete", classes: "govuk-tag--grey" } } %}
+
+    <!-- Task Lists -->
+    <h2 class="govuk-heading-m">1. Consider other options</h2>
+    {{ govukTaskList({
+      idPrefix: "considerOtherOptions",
+      items: [
+        { title: { text: "Resolving the dispute" }, href: "#", status: incomplete }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">2. Prepare your claim</h2>
+    {{ govukTaskList({
+      idPrefix: "prepareYourClaim",
+      items: [
+        { title: { text: "Completing your claim" }, href: "#", status: incomplete },
+        { title: { text: "Your details" }, href: "#", status: incomplete },
+        { title: { text: "Their details" }, href: "#", status: incomplete },
+        { title: { text: "Claim details" }, href: "#", status: incomplete }
+      ]
+    }) }}
+
+
+    <h2 class="govuk-heading-m">3. Submit</h2>
+    {{ govukTaskList({
+    idPrefix: "submit",
+    items: [
+    { title: { text: "Check and submit your claim" }, href: "#", status: incomplete }
+    ]
+    }) }}
+  </div>
+
+</div>
+{% endblock %}
