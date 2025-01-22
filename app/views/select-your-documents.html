@@ -9,20 +9,17 @@
     <!-- Heading Content -->
 
     <div class="govuk-grid-column-two-thirds">
-        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="/upload-documents">>Back</a>
-                </li>
-            </ol>
-        </nav>
+        <a href="/upload-documents" class="govuk-back-link">Back</a>
 
         <h1 class="govuk-heading-l" style="margin-bottom: 10px;">What types of documents do you want to upload?</h1>
         <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
         <p class="govuk-body">Property address: {{ propertyAddress }}</p>
-        <p>Check the order the court sent you for what documents you need to upload for your case.</p>
-        <p>Select the types of documents that apply to your case. You may not need to upload documents
+        <p class="govuk-body">Check the order the court sent you for what documents you need to upload for your
+            case.</p>
+        <p class="govuk-body">Select the types of documents that apply to your case. You may not need to upload
+            documents
             for every category.</p>
+
         <form action="/form-handler" method="post" novalidate>
 
 
@@ -160,7 +157,7 @@
                 Continue
             </button>
 
-            <a class="govuk-link" href="#">Cancel</a>
+            <a class="govuk-link" href="/">Cancel</a>
         </div>
 
     </div>
