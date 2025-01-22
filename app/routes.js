@@ -10,7 +10,7 @@ const config = require('./config.json');
 // Add your routes here
 
 router.get('/switch', (req, res) => {
-    res.render('landing');
+    res.render('switch');
 });
 
 router.get('/', (req, res) => {
