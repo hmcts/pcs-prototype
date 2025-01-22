@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
         }
     );
 });
+
 router.get('/view-claimant', (req, res) => {
     res.render('view-information-about-the-claimant',
         {
@@ -64,6 +65,16 @@ router.get('/feedback', (req, res) => {
         {
             caseNumber: config.caseNumber,
             propertyAddress: config.propertyAddress
+        }
+    );
+});
+
+router.get('/pay-fee', (req, res) => {
+    res.render('pay-fee',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+            claimFee: config.claimFee,
         }
     );
 });
