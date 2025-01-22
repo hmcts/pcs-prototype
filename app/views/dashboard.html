@@ -186,44 +186,35 @@
         }) }}
       {% endif %}
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">Orders and notices from the court</h2>
-      {% if (data['applicationType'] == "nonAutomatedMode") %}
-        {{ govukTaskList({
-          idPrefix: "ordersAndNoticesFromTheCourt",
-          items: [
-            { title: { text: "View orders and notices" }, href: "/view-orders", status: actionNeeded }
-          ]
-        }) }}
-      {% else %}
-        {{ govukTaskList({
-          idPrefix: "ordersAndNoticesFromTheCourt",
-          items: [
-            { title: { text: "View orders and notices" }, href: "/view-orders", status: done }
-          ]
-        }) }}
-      {% endif %}
-    </div>
-
-    <!-- Sidebar Column -->
-    <div class="govuk-grid-column-one-third">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p><strong>I want to...</strong></p>
-      <ul class="govuk-list">
-        <li><a class="govuk-link" href="#">Send a message to the court</a></li>
-        <li><a class="govuk-link" href="#">Submit an application</a></li>
-        <li><a class="govuk-link" href="#">Upload a document</a></li>
-        <li><a class="govuk-link" href="#">Pay a fee</a></li>
-      </ul>
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Contact us for help
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          For assistance, please call our helpline at 123-456-7890 or email help@example.com.
-        </div>
-      </details>
-    </div>
+    <h2 class="govuk-heading-m govuk-!-margin-top-5">Orders and notices from the court</h2>
+    {{ govukTaskList({
+      idPrefix: "ordersAndNoticesFromTheCourt",
+      items: [
+        { title: { text: "View orders and notices" }, href: "/view-orders", status: actionNeeded }
+      ]
+    }) }}
   </div>
+
+  <!-- Sidebar Column -->
+  <div class="govuk-grid-column-one-third">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <p><strong>I want to...</strong></p>
+    <ul class="govuk-list">
+      <li><a class="govuk-link" href="#">Send a message to the court</a></li>
+      <li><a class="govuk-link" href="#">Submit an application</a></li>
+      <li><a class="govuk-link" href="#">Upload a document</a></li>
+      <li><a class="govuk-link" href="/pay-fee">Pay a fee</a></li>
+    </ul>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Contact us for help
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+      </div>
+    </details>
+  </div>
+</div>
 {% endblock %}
