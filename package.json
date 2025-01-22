@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "govuk-prototype-kit dev",
+    "dev": "(govuk-prototype-kit dev &) && echo 'To switch modes, visit http://localhost:3000/switch'",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },

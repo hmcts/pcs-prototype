@@ -9,6 +9,10 @@ const config = require('./config.json');
 
 // Add your routes here
 
+router.get('/switch', (req, res) => {
+    res.render('landing');
+});
+
 router.get('/', (req, res) => {
     res.render('dashboard',
         {
@@ -16,7 +20,9 @@ router.get('/', (req, res) => {
             claimantName: config.claimantName,
             propertyAddress: config.propertyAddress,
             defendantName1: config.defendantName1,
+            defendantName2: config.defendantName2,
             claimFee: config.claimFee,
+            applicationType: req.session.data['applicationType']
         }
     );
 });
