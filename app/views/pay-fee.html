@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Pay your claim fee
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Heading Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/">Home</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">Pay your claim fee</li>
+            </ol>
+        </nav>
+        <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Pay your claim fee</h1>
+        <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
+        <p class="govuk-body">Property address: {{ propertyAddress }}</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+
+    <!-- Main Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table">
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Claim fee</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ claimFee }}</td>
+            </tr>
+            <tr class="govuk-table__header">
+                <td class="govuk-table__cell ">Total fee amount</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ claimFee }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="padding-top: 20px;">
+            <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                Continue to payment ({{ claimFee }})
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
