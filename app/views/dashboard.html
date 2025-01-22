@@ -187,12 +187,21 @@
       {% endif %}
 
     <h2 class="govuk-heading-m govuk-!-margin-top-5">Orders and notices from the court</h2>
-    {{ govukTaskList({
-      idPrefix: "ordersAndNoticesFromTheCourt",
-      items: [
-        { title: { text: "View orders and notices" }, href: "/view-orders", status: actionNeeded }
-      ]
-    }) }}
+      {% if (data['applicationType'] == "nonAutomatedMode") %}
+        {{ govukTaskList({
+          idPrefix: "ordersAndNoticesFromTheCourt",
+          items: [
+            { title: { text: "View orders and notices" }, href: "/view-orders", status: actionNeeded }
+          ]
+        }) }}
+      {% else %}
+        {{ govukTaskList({
+          idPrefix: "ordersAndNoticesFromTheCourt",
+          items: [
+            { title: { text: "View orders and notices" }, href: "/view-orders", status: done }
+          ]
+        }) }}
+      {% endif %}
   </div>
 
   <!-- Sidebar Column -->
