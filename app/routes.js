@@ -68,3 +68,13 @@ router.get('/feedback', (req, res) => {
         }
     );
 });
+
+router.get('/pay-fee', (req, res) => {
+    res.render('pay-fee',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+            claimFee: config.claimFee,
+        }
+    );
+});
