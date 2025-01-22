@@ -1,0 +1,180 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Claimant documents
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Heading Content -->
+
+    <div class="govuk-grid-column-two-thirds">
+        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb" >
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/upload-documents">>Back</a>
+                </li>
+            </ol>
+        </nav>
+
+        <h1 class="govuk-heading-l" style="margin-bottom: 10px;">What types of documents do you want to upload?</h1>
+        <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
+        <p class="govuk-body">Property address: {{ propertyAddress }}</p>
+        <p>Check the order the court sent you for what documents you need to upload for your case.</p>
+        <p>Select the types of documents that apply to your case. You may not need to upload documents
+            for every category.</p>
+        <form action="/form-handler" method="post" novalidate>
+
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="witness-evidence-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Witness evidence
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="witness-evidence" name="witness-evidence" type="checkbox"
+                                   value="witness-statement" aria-describedby="witness-evidence-item-hint">
+                            <label class="govuk-label govuk-checkboxes__label" for="witness-evidence">
+                                Witness statement
+                            </label>
+                            <div id="witness-evidence-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                A written statement of what your witness wants to tell the court
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="witness-evidence-2" name="witness-evidence" type="checkbox"
+                                   value="witness-summary">
+                            <label class="govuk-label govuk-checkboxes__label" for="witness-evidence-2">
+                                Witness summary
+                            </label>
+                            <div id="witness-summary-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                If you cannot get a written statement from your witness, you can write a summary
+                                of the evidence you would want to include in the witness statement. You must apply to
+                                the court to use a witness summary at the hearing. You must do this before the deadline.
+                                Use <a class="govuk-notification-banner__link" href="#">form N244'application notice'
+                                (opens in a new tab)</a>
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="witness-evidence-3" name="witness-evidence"
+                                   type="checkbox"
+                                   value="other">
+                            <label class="govuk-label govuk-checkboxes__label" for="witness-evidence-3">
+                                Document referred to in the statement
+                            </label>
+                            <div id="docs-ref-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                Documents you or your witness refer to in the statement, including emails, receipts,
+                                invoices,contracts and photos
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <br>
+                <fieldset class="govuk-fieldset" aria-describedby="expert-evidence-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Expert evidence
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="expert-evidence" name="expert-evidence" type="checkbox"
+                                   value="expert-report" aria-describedby="expert-evidence-item-hint">
+                            <label class="govuk-label govuk-checkboxes__label" for="expert-evidence">
+                                Expert's report
+                            </label>
+                            <div id="expert-evidence-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                A written report by your expert. Expert evidence is an opinion based
+                                on the expertise of a specialist, for example - a building surveyor who
+                                can comment on the quality of building work. An expert is not a legal
+                                representative.
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="expert-evidence-2" name="expert-evidence"
+                                   type="checkbox"
+                                   value="join-statements-experts">
+                            <label class="govuk-label govuk-checkboxes__label" for="expert-evidence-2">
+                                Joint statement of experts
+                            </label>
+                            <div id="joint-statement-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                A statement by the experts for both parties, setting out the facts in the case that
+                                they agree on or disagree on. This only applies if you and the other party set up a
+                                meeting for your experts. The experts write this statement after their discussion
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <br>
+                <fieldset class="govuk-fieldset" aria-describedby="hearing-docs-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Hearing Documents
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="hearing-docs" name="hearing-docs" type="checkbox"
+                                   value="documentary-evidence" aria-describedby="hearing-docs-item-hint">
+                            <label class="govuk-label govuk-checkboxes__label" for="hearing-docs">
+                              Documentary evidence for the hearing
+                            </label>
+                            <div id="docs-evidence-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                Documents that you wish to rely on at the hearing, including emails, receipts, invoices,
+                                contracts and photos.You do not need to add documents that you have already added under
+                                witness evidence
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="hearing-docs-2" name="hearing-docs"
+                                   type="checkbox"
+                                   value="legal-authorities">
+                            <label class="govuk-label govuk-checkboxes__label" for="hearing-docs-2">
+                                Legal authorities
+                            </label>
+                            <div id="legal-authorities-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                                You can use legal authorities to support your case.These are Acts of Parliament, Rules
+                                - for example, the Civil Procedures Rules - or other court cases that have decided
+                                a point that is relevant to your case. Copy and paste the relevant extracts from Acts,
+                                Rules or cases into a document to upload
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+        </form>
+
+        <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+
+            <a class="govuk-link" href="#">Cancel</a>
+        </div>
+
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+
+</div>
+{% endblock %} 

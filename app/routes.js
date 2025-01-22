@@ -76,3 +76,11 @@ router.get('/upload-your-documents', (req, res) => {
         }
     );
 });
+router.get('/select-your-documents', (req, res) => {
+    res.render('select-your-documents',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+        }
+    );
+});

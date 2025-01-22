@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} – Claimant information
+{{ serviceName }} – Claimant documents
 {% endblock %}
 
 {% block content %}
@@ -30,7 +30,7 @@
         <h2 class="govuk-heading-l" style="margin-bottom: 10px;">Deadlines for uploading documents</h2>
         <p>Check the order the court sent you for deadlines for uploading your
             documents.</p>
-        <p>After the deadline, you will have to <a href="" >apply to the court</a> if you want any new
+        <p>After the deadline, you will have to <a class="govuk-notification-banner__link" href="#">apply to the court</a> if you want any new
             document to be used at the trial or hearing.</p>
         <p>You do not have to upload all your documents at once.You can return to
             upload them later.</p>
@@ -42,11 +42,24 @@
         TIF,TIFF.</p>
         <p>You do not have to upload all your documents at once.You can return to
             upload them later.</p>
-        <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-            Start now >
-        </a>
 
-<!--        <hr class="govuk-section-break govuk-section-break&#45;&#45;m govuk-section-break&#45;&#45;visible">-->
+        <div class="govuk-button-group">
+            <a href="/select-your-documents" role="button" draggable="false" class="govuk-button govuk-button--start"
+               data-module="govuk-button">
+                Start now
+                <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+                     viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+                </svg>
+            </a>
+
+            <a class="govuk-link" href="#">Cancel</a>
+        </div>
+
+
+
+
+        <!--        <hr class="govuk-section-break govuk-section-break&#45;&#45;m govuk-section-break&#45;&#45;visible">-->
     </div>
 
     <!-- Sidebar Column -->
@@ -62,8 +75,6 @@
             </div>
         </details>
     </div>
-
-    <!-- Main Content -->
 
 </div>
 {% endblock %} 
