@@ -11,6 +11,20 @@
     <h1 class="govuk-heading-l">Make a claim</h1>
   </div>
 
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+          </div>
+        </details>
+    </div>
+
   <!-- Main Content -->
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-s">Application complete</h2>
@@ -28,29 +42,29 @@
     <!-- Task Lists -->
     <h2 class="govuk-heading-m">1. Consider other options</h2>
     {{ govukTaskList({
-    idPrefix: "considerOtherOptions",
-    items: [
-    { title: { text: "Resolving the dispute" }, href: "#", status: incomplete }
-    ]
+      idPrefix: "considerOtherOptions",
+      items: [
+        { title: { text: "Resolving the dispute" }, href: "#", status: incomplete }
+      ]
     }) }}
 
     <h2 class="govuk-heading-m">2. Prepare your claim</h2>
     {{ govukTaskList({
-    idPrefix: "prepareYourClaim",
-    items: [
-    { title: { text: "Completing your claim" }, href: "#", status: incomplete },
-    { title: { text: "Your details" }, href: "#", status: incomplete },
-    { title: { text: "Their details" }, href: "#", status: incomplete },
-    { title: { text: "Claim details" }, href: "#", status: incomplete }
-    ]
+      idPrefix: "prepareYourClaim",
+      items: [
+        { title: { text: "Completing your claim" }, href: "#", status: incomplete },
+        { title: { text: "Your details" }, href: "#", status: incomplete },
+        { title: { text: "Their details" }, href: "#", status: incomplete },
+        { title: { text: "Claim details" }, href: "#", status: incomplete }
+      ]
     }) }}
 
     <h2 class="govuk-heading-m">3. Submit</h2>
     {{ govukTaskList({
-    idPrefix: "submit",
-    items: [
-    { title: { text: "Check and submit your claim" }, href: "#", status: incomplete }
-    ]
+      idPrefix: "submit",
+      items: [
+        { title: { text: "Check and submit your claim" }, href: "#", status: incomplete }
+      ]
     }) }}
   </div>
 </div>
