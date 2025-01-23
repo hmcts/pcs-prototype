@@ -78,3 +78,13 @@ router.get('/pay-fee', (req, res) => {
         }
     );
 });
+
+router.get('/review-query-details', (req, res) => {
+    res.render('review-query-details',
+        {
+            caseNumber: config.caseNumber,
+            claimantName: config.claimantName,
+            defendantName1: config.defendantName1,
+        }
+    );
+});
