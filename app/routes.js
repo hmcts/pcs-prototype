@@ -78,3 +78,15 @@ router.get('/pay-fee', (req, res) => {
         }
     );
 });
+
+router.get('/submit-application-start', (req, res) => {
+    res.render('submit-application-start');
+});
+
+router.get('/submit-application-language', (req, res) => {
+    res.render('submit-application-language');
+});
+
+router.get('/submit-application-task-list', (req, res) => {
+    res.render('submit-application-task-list');
+});
