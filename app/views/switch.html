@@ -8,31 +8,34 @@
     <div class="govuk-grid-row">
         <!-- Main Content -->
         <div class="govuk-grid-column-two-thirds">
-            <form class="form">
+            <form class="form" method="post" action="/update-prototype" target="_blank">
                 {{ govukRadios({
-                    name: "applicationType",
-                    value: data['applicationType'],
-                    fieldset: {
-                        legend: {
-                            text: "Choose the prototype version you want to use",
-                            isPageHeading: true,
-                            classes: "govuk-fieldset__legend--l"
-                        }
-                    },
-                    items: [
-                        {
-                            value: "nonAutomatedMode",
-                            text: "Non-automated mode"
-                        },
-                        {
-                            value: "automatedMode",
-                            text: "Automated mode"
-                        }
-                    ]
+                name: "applicationType",
+                value: data['applicationType'],
+                fieldset: {
+                legend: {
+                text: "Choose the prototype version you want to use",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+                }
+                },
+                items: [
+                {
+                value: "nonAutomatedMode",
+                text: "Non-automated mode"
+                },
+                {
+                value: "automatedMode",
+                text: "Automated mode"
+                }
+                ]
                 }) }}
 
                 {{ govukButton({
-                    text: "Convert the prototype"
+                text: "Convert the prototype",
+                attributes: {
+                type: "submit"
+                }
                 }) }}
             </form>
         </div>

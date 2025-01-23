@@ -27,6 +27,11 @@ router.get('/', (req, res) => {
     );
 });
 
+router.post('/update-prototype', (req, res) => {
+    req.session.data['applicationType'] = req.body.applicationType;
+    res.redirect('/');
+});
+
 router.get('/view-claimant', (req, res) => {
     res.render('view-information-about-the-claimant',
         {
