@@ -149,8 +149,8 @@
         {{ govukTaskList({
           idPrefix: "theClaim",
           items: [
-            { title: { text: "View the claim" }, href: "/view-the-claim", status: done },
-            { title: { text: "View information about the claimant" }, href: "/view-claimant", status: done }
+            { title: { text: "View the claim" }, href: "/view-the-claim", status: available },
+            { title: { text: "View information about the claimant" }, href: "/view-claimant", status: available }
           ]
         }) }}
       {% endif %}
@@ -168,8 +168,8 @@
         {{ govukTaskList({
           idPrefix: "theResponse",
           items: [
-            { title: { text: "View response to the claim" }, href: "#", status: done },
-            { title: { text: "View information about the defendant" }, href: "#", status: done }
+            { title: { text: "View response to the claim" }, href: "#", status: available },
+            { title: { text: "View information about the defendant" }, href: "#", status: available }
           ]
         }) }}
       {% endif %}
@@ -192,7 +192,7 @@
           idPrefix: "hearings",
           items: [
             { title: { text: "View hearings" }, href: "/view-hearings", status: inProgress },
-            { title: { text: "Pay the hearing fee" }, href: "/pay-fee", status: actionNeeded },
+            { title: { text: "Pay the hearing fee" }, href: "#", status: actionNeeded },
             { title: { text: "Upload hearing documents" }, href: "/upload-documents",status: inProgress },
             { title: { text: "View documents" }, status: notAvailable },
             { title: { text: "Add the trial arrangements" }, status: notAvailable },
@@ -213,7 +213,7 @@
         {{ govukTaskList({
           idPrefix: "ordersAndNoticesFromTheCourt",
           items: [
-            { title: { text: "View orders and notices" }, href: "/view-orders", status: done }
+            { title: { text: "View orders and notices" }, href: "/view-orders", status: available }
           ]
         }) }}
       {% endif %}
@@ -227,7 +227,7 @@
       <li><a class="govuk-link" href="#">Send a message to the court</a></li>
       <li><a class="govuk-link" href="/submit-application-start">Submit an application</a></li>
       <li><a class="govuk-link" href="#">Upload a document</a></li>
-      <li><a class="govuk-link" href="/pay-fee">Pay a fee</a></li>
+      <li><a class="govuk-link" href="#">Pay a fee</a></li>
     </ul>
     <details class="govuk-details">
       <summary class="govuk-details__summary">
