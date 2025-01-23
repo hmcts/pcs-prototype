@@ -78,3 +78,13 @@ router.get('/pay-fee', (req, res) => {
         }
     );
 });
+
+router.get('/raise-query', (req, res) => {
+    res.render('raise-a-query',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+            claimFee: config.claimFee,
+        }
+    );
+});
