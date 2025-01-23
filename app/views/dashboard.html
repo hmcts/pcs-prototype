@@ -1,113 +1,222 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} – Dashboard
+  {{ serviceName }} – Dashboard
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <!-- Heading Content -->
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l" style="margin-bottom: 10px;">{{ claimantName }} vs {{ defendantName1 }}</h1>
-    <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
-    <p class="govuk-body">Property address: {{ propertyAddress }}</p>
-  </div>
-
-  <!-- Main Content -->
-  <div class="govuk-grid-column-two-thirds">
-
-    <!-- Notifications -->
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-1"
-         data-module="govuk-notification-banner" style="margin-bottom: 20px;">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-1">
-          Your case is being processed
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <p>
-          Currently, your case is being progressed by HMCTS staff. The number of things you can currently do on your
-          case has been reduced and the amount of information you can see is limited.
-        </p>
-      </div>
+  <div class="govuk-grid-row">
+    <!-- Heading Content -->
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l" style="margin-bottom: 10px;">
+        {{ claimantName }} vs {{ defendantName1 if data['applicationType'] == 'nonAutomatedMode' else defendantName2 }}
+      </h1>
+      <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
+      <p class="govuk-body">Property address: {{ propertyAddress }}</p>
     </div>
 
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-2"
-         data-module="govuk-notification-banner" style="margin-bottom: 20px;">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-2">
-          Important
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <p>
-          You have received a message about this case which you have not yet viewed.
-          Click <a class="govuk-notification-banner__link" href="#">here</a> to check your messages.
-        </p>
-      </div>
-    </div>
+    <!-- Main Content -->
+    <div class="govuk-grid-column-two-thirds">
+      <!-- Notifications -->
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-3"
-         data-module="govuk-notification-banner" style="margin-bottom: 20px;">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-3">
-          New Message Waiting
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <p>
-          Your claim has not yet been issued, in order to proceed you must pay the claim fee of {{ claimFee }}.
-          <a class="govuk-notification-banner__link" href="/pay-fee">Pay the claim fee</a>.
-        </p>
-      </div>
-    </div>
+      {% if (data['applicationType'] == "nonAutomatedMode") %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-1"
+          data-module="govuk-notification-banner" style="margin-bottom: 20px;">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-1">
+              Your case is being processed
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p>
+              Currently, your case is being progressed by HMCTS staff. The number of things you can currently do on your
+              case has been reduced and the amount of information you can see is limited.
+            </p>
+          </div>
+        </div>
 
-    <!-- Tags -->
-    {% set done = { tag: { text: "Available", classes: "govuk-tag--green" } } %}
-    {% set notAvailable = { tag: { text: "Not available", classes: "govuk-tag--grey" } } %}
-    {% set inProgress = { tag: { text: "In progress", classes: "govuk-tag--yellow" } } %}
-    {% set actionNeeded = { tag: { text: "Action needed", classes: "govuk-tag--red" } } %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-2"
+          data-module="govuk-notification-banner" style="margin-bottom: 20px;">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-2">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p>
+              You have received a message about this case which you have not yet viewed.
+              Click <a class="govuk-notification-banner__link" href="#">here</a> to check your messages.
+            </p>
+          </div>
+        </div>
 
-    <!-- Task Lists -->
-    <h2 class="govuk-heading-m">The claim</h2>
-    {{ govukTaskList({
-      idPrefix: "theClaim",
-      items: [
-        { title: { text: "View the claim" }, href: "/view-the-claim", status: done },
-        { title: { text: "View information about the claimant" }, href: "/view-claimant", status: done }
-      ]
-    }) }}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-3"
+          data-module="govuk-notification-banner" style="margin-bottom: 20px;">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-3">
+              New Message Waiting
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p>
+              Your claim has not yet been issued, in order to proceed you must pay the claim fee of {{ claimFee }}.
+              <a class="govuk-notification-banner__link" href="/pay-fee">Pay the claim fee</a>.
+            </p>
+          </div>
+        </div>
+      {% elseif (data['applicationType'] == "automatedMode") %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-4"
+          data-module="govuk-notification-banner" style="margin-bottom: 20px;">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-4">
+              The other party has responded
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p>
+              A judge is considering the other party's application and your response. You'll receive an update with their
+              decision. <a href="/view-the-claim">View the application</a>.
+            </p>
+          </div>
+        </div>
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-5">The response</h2>
-    {{ govukTaskList({
-      idPrefix: "theResponse",
-      items: [
-        { title: { text: "View response to the claim" }, status: notAvailable },
-        { title: { text: "View information about the defendant" }, status: notAvailable }
-      ]
-    }) }}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-2"
+            data-module="govuk-notification-banner" style="margin-bottom: 20px;">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-5">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p>
+              You have received a message about this case which you have not yet viewed.
+              Click <a class="govuk-notification-banner__link" href="#">here</a> to check your messages.
+            </p>
+          </div>
+        </div>
 
-    <h2 class="govuk-heading-m">Hearings</h2>
-    {{ govukTaskList({
-      idPrefix: "hearings",
-      items: [
-        { title: { text: "View hearings" }, href: "/view-hearings", status: inProgress },
-        { title: { text: "Pay the hearing fee" }, status: notAvailable },
-        { title: { text: "Upload hearing documents" }, status: notAvailable },
-        { title: { text: "View documents" }, status: notAvailable },
-        { title: { text: "Add the trial arrangements" }, status: notAvailable },
-        { title: { text: "View the bundle" }, status: notAvailable }
-      ]
-    }) }}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-5"
+          data-module="govuk-notification-banner" style="margin-bottom: 20px;">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-6">
+              The other party is not ready for the hearing
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p>
+              Follow the instructions in the <a href="/view-orders">standard directions order</a> and then
+              <a href="/upload-documents">upload documents</a> in support of your claim. The Deadline is
+              {{ +15 | longDate }}.
+            </p>
+          </div>
+        </div>
+
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title-6"
+          data-module="govuk-notification-banner" style="margin-bottom: 20px;">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title-7">
+              Trial or hearing scheduled
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p>
+              Your trial or hearing is {{ +5 | longDate }} at 8am at the County Court at Barnet Civil and Family Centre.
+              <a class="govuk-notification-banner__link" href="/view-hearings">View the hearing notice</a>.
+            </p>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Tags -->
+      {% set available = { tag: { text: "Available", classes: "govuk-tag--green" } } %}
+      {% set done = { tag: { text: "Done", classes: "govuk-tag--green" } } %}
+      {% set notAvailable = { tag: { text: "Not available", classes: "govuk-tag--grey" } } %}
+      {% set inProgress = { tag: { text: "In progress", classes: "govuk-tag--yellow" } } %}
+      {% set actionNeeded = { tag: { text: "Action needed", classes: "govuk-tag--red" } } %}
+
+      <!-- Task Lists -->
+      <h2 class="govuk-heading-m">The claim</h2>
+      {% if (data['applicationType'] == "nonAutomatedMode") %}
+        {{ govukTaskList({
+          idPrefix: "theClaim",
+          items: [
+            { title: { text: "View the claim" }, href: "/view-the-claim", status: available },
+            { title: { text: "View information about the claimant" }, href: "/view-claimant", status: available }
+          ]
+        }) }}
+      {% else %}
+        {{ govukTaskList({
+          idPrefix: "theClaim",
+          items: [
+            { title: { text: "View the claim" }, href: "/view-the-claim", status: available },
+            { title: { text: "View information about the claimant" }, href: "/view-claimant", status: available }
+          ]
+        }) }}
+      {% endif %}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">The response</h2>
+      {% if (data['applicationType'] == "nonAutomatedMode") %}
+        {{ govukTaskList({
+          idPrefix: "theResponse",
+          items: [
+            { title: { text: "View response to the claim" }, status: notAvailable },
+            { title: { text: "View information about the defendant" }, status: notAvailable }
+          ]
+        }) }}
+      {% else %}
+        {{ govukTaskList({
+          idPrefix: "theResponse",
+          items: [
+            { title: { text: "View response to the claim" }, href: "#", status: available },
+            { title: { text: "View information about the defendant" }, href: "#", status: available }
+          ]
+        }) }}
+      {% endif %}
+
+      <h2 class="govuk-heading-m">Hearings</h2>
+      {% if (data['applicationType'] == "nonAutomatedMode") %}
+        {{ govukTaskList({
+          idPrefix: "hearings",
+          items: [
+            { title: { text: "View hearings" }, href: "/view-hearings", status: inProgress },
+            { title: { text: "Pay the hearing fee" }, status: notAvailable },
+            { title: { text: "Upload hearing documents" }, status: notAvailable },
+            { title: { text: "View documents" }, status: notAvailable },
+            { title: { text: "Add the trial arrangements" }, status: notAvailable },
+            { title: { text: "View the bundle" }, status: notAvailable }
+          ]
+        }) }}
+      {% else %}
+        {{ govukTaskList({
+          idPrefix: "hearings",
+          items: [
+            { title: { text: "View hearings" }, href: "/view-hearings", status: inProgress },
+            { title: { text: "Pay the hearing fee" }, href: "#", status: actionNeeded },
+            { title: { text: "Upload hearing documents" }, href: "/upload-documents",status: inProgress },
+            { title: { text: "View documents" }, status: notAvailable },
+            { title: { text: "Add the trial arrangements" }, status: notAvailable },
+            { title: { text: "View the bundle" }, status: notAvailable }
+          ]
+        }) }}
+      {% endif %}
 
     <h2 class="govuk-heading-m govuk-!-margin-top-5">Orders and notices from the court</h2>
-    {{ govukTaskList({
-      idPrefix: "ordersAndNoticesFromTheCourt",
-      items: [
-        { title: { text: "View orders and notices" }, href: "/view-orders", status: actionNeeded }
-      ]
-    }) }}
+      {% if (data['applicationType'] == "nonAutomatedMode") %}
+        {{ govukTaskList({
+          idPrefix: "ordersAndNoticesFromTheCourt",
+          items: [
+            { title: { text: "View orders and notices" }, href: "/view-orders", status: actionNeeded }
+          ]
+        }) }}
+      {% else %}
+        {{ govukTaskList({
+          idPrefix: "ordersAndNoticesFromTheCourt",
+          items: [
+            { title: { text: "View orders and notices" }, href: "/view-orders", status: available }
+          ]
+        }) }}
+      {% endif %}
   </div>
 
   <!-- Sidebar Column -->
@@ -119,6 +228,9 @@
       <li><a class="govuk-link" href="#">Submit an application</a></li>
       <li><a class="govuk-link" href="/upload-your-documents">Upload a document</a></li>
       <li><a class="govuk-link" href="/pay-fee">Pay a fee</a></li>
+      <li><a class="govuk-link" href="/submit-application-start">Submit an application</a></li>
+      <li><a class="govuk-link" href="#">Upload a document</a></li>
+      <li><a class="govuk-link" href="#">Pay a fee</a></li>
     </ul>
     <details class="govuk-details">
       <summary class="govuk-details__summary">

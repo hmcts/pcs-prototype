@@ -9,6 +9,10 @@ const config = require('./config.json');
 
 // Add your routes here
 
+router.get('/switch', (req, res) => {
+    res.render('switch');
+});
+
 router.get('/', (req, res) => {
     res.render('dashboard',
         {
@@ -16,9 +20,16 @@ router.get('/', (req, res) => {
             claimantName: config.claimantName,
             propertyAddress: config.propertyAddress,
             defendantName1: config.defendantName1,
+            defendantName2: config.defendantName2,
             claimFee: config.claimFee,
+            applicationType: req.session.data['applicationType']
         }
     );
+});
+
+router.post('/update-prototype', (req, res) => {
+    req.session.data['applicationType'] = req.body.applicationType;
+    res.redirect('/');
 });
 
 router.get('/view-claimant', (req, res) => {
@@ -78,7 +89,6 @@ router.get('/pay-fee', (req, res) => {
         }
     );
 });
-
 router.get('/upload-your-documents', (req, res) => {
     res.render('upload-documents',
         {
@@ -94,4 +104,15 @@ router.get('/select-your-documents', (req, res) => {
             propertyAddress: config.propertyAddress,
         }
     );
+=======
+router.get('/submit-application-start', (req, res) => {
+    res.render('submit-application-start');
+});
+
+router.get('/submit-application-language', (req, res) => {
+    res.render('submit-application-language');
+});
+
+router.get('/submit-application-task-list', (req, res) => {
+    res.render('submit-application-task-list');
 });
