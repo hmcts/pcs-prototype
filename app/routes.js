@@ -120,6 +120,16 @@ router.get('/submit-application-task-list', (req, res) => {
     res.render('submit-application-task-list');
 });
 
+router.get('/raise-query', (req, res) => {
+    res.render('raise-a-query',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+            claimFee: config.claimFee,
+        }
+    );
+});
+
 router.get('/review-query-details', (req, res) => {
     res.render('review-query-details',
         {
