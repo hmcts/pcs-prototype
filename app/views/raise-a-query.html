@@ -1,0 +1,174 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Raise a query
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Heading Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/">Home</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">Raise a query</li>
+            </ol>
+        </nav>
+        <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Raise a query</h1>
+        <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
+        <p class="govuk-body">Property address: {{ propertyAddress }}</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+
+    <!-- Main Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="query-summary">
+                    Query subject
+                </label>
+            </h2>
+            <div class="govuk-hint" id="query-summary-hint">
+                This subject should be the summary of your query
+            </div>
+            <input class="govuk-input" id="query-summary" name="eventName" type="text">
+        </div>
+        <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="query-detail">
+                    Query detail
+                </label>
+            </h2>
+            <div class="govuk-hint">
+                Include as many details as possible so caseworkers can respond to your query
+            </div>
+            <textarea class="govuk-textarea" id="query-detail" name="queryDetail" rows="5"
+                aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        {% set dateHTML %}
+        {{ govukDateInput({
+            id: "hearing-date",
+            namePrefix: "hearing-date",
+            fieldset: {
+                legend: {
+                    text: "What is the date of the hearing?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                }
+            }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+            classes: "govuk-radios",
+            name: "changedName",
+            fieldset: {
+                legend: {
+                    text: "Is this query hearing related?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes",
+                    conditional: {
+                        html: dateHTML
+                    }
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m">
+                Add document to this query (Optional)
+            </label>
+        </h2>
+        <div class="govuk-hint" id="add-document-hint">
+            Attach a document to this message
+        </div>
+        <div>
+            {{ govukButton({
+                text: "Choose file",
+                type: "button",
+                attributes: {
+                    onclick: "toggleDocumentSection()"
+                }
+            }) }}
+        </div>
+
+        <!-- Document Section -->
+        <div id="document-section" style="display: none;" class="govuk-radios__conditional">
+            <div class="govuk-grid-row" style="margin-bottom: 1px">
+                <div class="govuk-grid-column-two-thirds">
+                    <h3 class="govuk-heading-s govuk-!-margin-top-3 govuk-!-margin-bottom-0">
+                        Document
+                    </h3>
+                </div>
+                <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+                    {{ govukButton({
+                        text: "Remove",
+                        type: "button",
+                        classes: "govuk-button--secondary",
+                        attributes: {
+                            onclick: "toggleDocumentSection()"
+                        }
+                    }) }}
+                </div>
+            </div>
+
+            {{ govukFileUpload({
+                id: "file-upload-1",
+                name: "fileUpload1"
+            }) }}
+            {{ govukButton({
+                text: "Add new",
+                type: "button",
+                classes: "govuk-button"
+            }) }}
+        </div>
+
+        <div class="govuk-button-group">
+            <a href="/review-query-details" role="button" draggable="false" class="govuk-button"
+                data-module="govuk-button">
+                Continue
+            </a>
+
+            <a class="govuk-link" href="/">Cancel</a>
+        </div>
+
+        <script>
+            function toggleDocumentSection() {
+                const documentSection = document.getElementById('document-section');
+                if (documentSection.style.display === 'none') {
+                    documentSection.style.display = 'block';
+                } else {
+                    documentSection.style.display = 'none';
+                }
+            }
+        </script>
+    </div>
+</div>
+{% endblock %}
