@@ -9,6 +9,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <!-- Heading Content -->
+        <a href="/raise-query" class="govuk-back-link">Back</a>
         <div class="govuk-grid-column-three-fourths">
             <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Review query details</h1>
             <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
@@ -74,17 +75,12 @@
             </div>
         </dl>
         <div class="govuk-button-group">
-            <a href="/raise-query" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Previous
+            <a href="/review-query-details" role="button" draggable="false" class="govuk-button"
+                data-module="govuk-button">
+                Continue
             </a>
-            <a href="/raise-query-success" type="submit" class="govuk-button" data-module="govuk-button">
-                Submit
-            </a>
-        </div>
-        <div style="padding-top: 20px;">
-            <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-                Cancel and return to case overview
-            </a>
+
+            <a class="govuk-link" href="/">Cancel</a>
         </div>
     </div>
 
