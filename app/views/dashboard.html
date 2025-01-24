@@ -46,7 +46,7 @@
           <div class="govuk-notification-banner__content">
             <p>
               You have received a message about this case which you have not yet viewed.
-              Click <a class="govuk-notification-banner__link" href="#">here</a> to check your messages.
+              <a class="govuk-notification-banner__link" href="#">View the message centre</a>.
             </p>
           </div>
         </div>
@@ -206,7 +206,7 @@
         {{ govukTaskList({
           idPrefix: "ordersAndNoticesFromTheCourt",
           items: [
-            { title: { text: "View orders and notices" }, href: "/view-orders", status: actionNeeded }
+            { title: { text: "View orders and notices" }, href: "/view-orders", status: available }
           ]
         }) }}
       {% else %}
@@ -224,12 +224,10 @@
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <p><strong>I want to...</strong></p>
     <ul class="govuk-list">
-      <li><a class="govuk-link" href="#">Send a message to the court</a></li>
-      <li><a class="govuk-link" href="#">Submit an application</a></li>
+      <li><a class="govuk-link" href="/raise-query">Send a message to the court</a></li>
+      <li><a class="govuk-link" href="/submit-application-start">Submit an application</a></li>
       <li><a class="govuk-link" href="/upload-your-documents">Upload a document</a></li>
       <li><a class="govuk-link" href="/pay-fee">Pay a fee</a></li>
-      <li><a class="govuk-link" href="/submit-application-start">Submit an application</a></li>
-      <li><a class="govuk-link" href="#">Pay a fee</a></li>
     </ul>
     <details class="govuk-details">
       <summary class="govuk-details__summary">

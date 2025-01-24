@@ -89,6 +89,7 @@ router.get('/pay-fee', (req, res) => {
         }
     );
 });
+
 router.get('/upload-your-documents', (req, res) => {
     res.render('upload-documents',
         {
@@ -97,6 +98,7 @@ router.get('/upload-your-documents', (req, res) => {
         }
     );
 });
+
 router.get('/select-your-documents', (req, res) => {
     res.render('select-your-documents',
         {
@@ -105,6 +107,7 @@ router.get('/select-your-documents', (req, res) => {
         }
     );
 });
+
 router.get('/submit-application-start', (req, res) => {
     res.render('submit-application-start');
 });
@@ -115,6 +118,16 @@ router.get('/submit-application-language', (req, res) => {
 
 router.get('/submit-application-task-list', (req, res) => {
     res.render('submit-application-task-list');
+});
+
+router.get('/raise-query', (req, res) => {
+    res.render('raise-a-query',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+            claimFee: config.claimFee,
+        }
+    );
 });
 
 router.get('/raise-query-success', (req, res) => {
