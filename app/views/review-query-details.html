@@ -8,15 +8,13 @@
 <div class="govuk-grid-row">
     <!-- Heading Content -->
      
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-fourths">
         <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Review query details</h1>
         <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
         <p class="govuk-body" style="margin-bottom: 5px;">{{ claimantName }} v {{ defendantName1 }}</p>
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     </div>
-
-
-
+    
     <!-- Main Content -->
  <div>
      <dl class="govuk-summary-list">
@@ -79,13 +77,12 @@
      </dl>
  </div>
     <div class="govuk-button-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-            Save and continue
-        </button>
-
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Save as draft
-        </button>
+        <a href="/raise-query" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Previous
+        </a>
+        <a href="/raise-query-success" type="submit" class="govuk-button" data-module="govuk-button">
+            Submit
+        </a>
     </div>
         <div style="padding-top: 20px;">
             <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">

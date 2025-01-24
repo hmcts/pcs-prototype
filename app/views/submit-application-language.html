@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Language select
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <!-- Heading Content -->
+        <h1 class="govuk-heading-l">Language</h1>
+
+        <!-- Main Content -->
+        <p class="govuk-body">
+            You must choose which language you want to use to make the claim.
+        </p>
+        <p class="govuk-body">
+            If you select 'Welsh', information and documents will be presented in Welsh. But, some notifications
+            about your claim will still be in English.
+        </p>
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                        In what language do you want to make your claim?
+                    </h2>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input"
+                            id="whichLanguage"
+                            name="whichLanguage"
+                            type="radio"
+                            value="england">
+                        <label class="govuk-label govuk-radios__label" for="whichLanguage">
+                            English
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input"
+                            id="whichLanguage-2"
+                            name="whichLanguage"
+                            type="radio"
+                            value="scotland">
+                        <label class="govuk-label govuk-radios__label" for="whichLanguage-2">
+                            Welsh
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div>
+            <a href="/submit-application-task-list"
+            role="button"
+            draggable="false"
+            class="govuk-button"
+            data-module="govuk-button">
+                Save and continue
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+</div>
+{% endblock %}
