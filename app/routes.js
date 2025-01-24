@@ -130,6 +130,15 @@ router.get('/raise-query', (req, res) => {
     );
 });
 
+router.get('/review-query-details', (req, res) => {
+    res.render('review-query-details',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+        }
+    );
+});
+
 router.get('/raise-query-success', (req, res) => {
     res.render('raise-query-success',
         {
