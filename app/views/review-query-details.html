@@ -5,89 +5,101 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-    <!-- Heading Content -->
-     
-    <div class="govuk-grid-column-three-fourths">
-        <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Review query details</h1>
-        <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
-        <p class="govuk-body">Property address: {{ propertyAddress }}</p>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    </div>
-    
     <!-- Main Content -->
-<div>
- <dl class="govuk-summary-list">
-     <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-             Query subject
-         </dt>
-         <dd class="govuk-summary-list__value">
-             Review attached document
-         </dd>
-         <dd class="govuk-summary-list__actions">
-             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> query subject</span></a>
-         </dd>
-     </div>
-     <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-             Query detail
-         </dt>
-         <dd class="govuk-summary-list__value">
-             Please review attached document and advise
-             if hearing should proceed?
-         </dd>
-         <dd class="govuk-summary-list__actions">
-             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> query detail</span></a>
-         </dd>
-     </div>
-     <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-             Is the query hearing related?
-         </dt>
-         <dd class="govuk-summary-list__value">
-             Yes
-         </dd>
-         <dd class="govuk-summary-list__actions">
-             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> query relation</span></a>
-         </dd>
-     </div>
-     <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-             What is the date of the hearing?
-         </dt>
-         <dd class="govuk-summary-list__value">
-             18 Nov 2022
-         </dd>
-         <dd class="govuk-summary-list__actions">
-             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> hearing date</span></a>
-         </dd>
-     </div>
-     <div class="govuk-summary-list__row">
-         <dt class="govuk-summary-list__key">
-             Upload a file to the query
-         </dt>
-         <dd class="govuk-summary-list__value">
-             <a class="govuk-link" href="#">Document.pdf</a>
-         </dd>
-         <dd class="govuk-summary-list__actions">
-             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> upload a file</span></a>
-         </dd>
-     </div>
- </dl>
-</div>
-    <div class="govuk-button-group">
-        <a href="/raise-query" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Previous
-        </a>
-        <a href="/raise-query-success" type="submit" class="govuk-button" data-module="govuk-button">
-            Submit
-        </a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <!-- Heading Content -->
+        <div class="govuk-grid-column-three-fourths">
+            <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Review query details</h1>
+            <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
+            <p class="govuk-body">Property address: {{ propertyAddress }}</p>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        </div>
+
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Query subject
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Review attached document
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> query subject</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Query detail
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Please review attached document and advise if the hearing should proceed
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> query detail</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Is the query hearing related?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> query relation</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    What is the date of the hearing?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    18 Nov 2022
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> hearing date</span></a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Upload a file to the query
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <a class="govuk-link" href="#">Document.pdf</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> upload a file</span></a>
+                </dd>
+            </div>
+        </dl>
+        <div class="govuk-button-group">
+            <a href="/raise-query" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Previous
+            </a>
+            <a href="/raise-query-success" type="submit" class="govuk-button" data-module="govuk-button">
+                Submit
+            </a>
+        </div>
+        <div style="padding-top: 20px;">
+            <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                Cancel and return to case overview
+            </a>
+        </div>
     </div>
-    <div style="padding-top: 20px;">
-        <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-            Cancel and return to case overview
-        </a>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
     </div>
 </div>
 {% endblock %}
