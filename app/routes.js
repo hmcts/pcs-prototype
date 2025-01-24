@@ -89,7 +89,6 @@ router.get('/pay-fee', (req, res) => {
         }
     );
 });
-
 router.get('/upload-your-documents', (req, res) => {
     res.render('upload-documents',
         {
