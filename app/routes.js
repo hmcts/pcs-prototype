@@ -90,6 +90,24 @@ router.get('/pay-fee', (req, res) => {
     );
 });
 
+router.get('/upload-your-documents', (req, res) => {
+    res.render('upload-documents',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+        }
+    );
+});
+
+router.get('/select-your-documents', (req, res) => {
+    res.render('select-your-documents',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+        }
+    );
+});
+
 router.get('/submit-application-start', (req, res) => {
     res.render('submit-application-start');
 });
