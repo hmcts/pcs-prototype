@@ -116,3 +116,12 @@ router.get('/submit-application-language', (req, res) => {
 router.get('/submit-application-task-list', (req, res) => {
     res.render('submit-application-task-list');
 });
+
+router.get('/raise-query-success', (req, res) => {
+    res.render('raise-query-success',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+        }
+    );
+});

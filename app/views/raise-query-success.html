@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Query submitted
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Main Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h2 class="govuk-panel__title">
+                Query submitted
+            </h2>
+            <div class="govuk-panel__body">
+                Your query has been sent to HMCTS
+            </div>
+        </div>
+
+        <div>
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p class="govuk-body"> Our team will ready your query and will respond.</p>
+            <p class="govuk-body">When the response is available it will be added to the message centre.</p>
+        </div>
+
+        <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Close and return to case overview
+        </a>
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+</div>
+{% endblock %}
