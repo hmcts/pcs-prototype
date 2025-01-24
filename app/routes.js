@@ -129,3 +129,12 @@ router.get('/raise-query', (req, res) => {
         }
     );
 });
+
+router.get('/raise-query-success', (req, res) => {
+    res.render('raise-query-success',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
+        }
+    );
+});
