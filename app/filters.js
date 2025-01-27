@@ -29,3 +29,10 @@ addFilter('longDate', (relativeDays = 0) => {
     const options = { day: '2-digit', month: 'long', year: 'numeric' };
     return currentDate.toLocaleDateString('en-GB', options);
 });
+
+addFilter('numericDate', (relativeDays = 0) => {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + relativeDays);
+    const options = { day: '2-digit', month: 'numeric', year: 'numeric' };
+    return currentDate.toLocaleDateString('en-GB', options);
+});

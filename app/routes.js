@@ -147,3 +147,18 @@ router.get('/raise-query-success', (req, res) => {
         }
     );
 });
+
+router.get('/view-messages', (req, res) => {
+    res.render('view-messages',
+        {
+            caseNumber: config.caseNumber,
+            claimantName: config.claimantName,
+            propertyAddress: config.propertyAddress,
+            defendantName1: config.defendantName1,
+            defendantName2: config.defendantName2,
+            claimFee: config.claimFee,
+            applicationType: req.session.data['applicationType']
+        }
+    );
+});
+
