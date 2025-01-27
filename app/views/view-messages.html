@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Message centre
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Heading Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="/">Home</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">Message centre</li>
+            </ol>
+        </nav>
+        <h1 class="govuk-heading-l" style="margin-bottom: 10px;">
+            {{ claimantName }} vs {{ defendantName1 if data['applicationType'] == 'nonAutomatedMode' else
+            defendantName2 }}
+        </h1>
+        <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
+        <p class="govuk-body">Property address: {{ propertyAddress }}</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="govuk-grid-column-two-thirds">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Messages</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Subject</th>
+                    <th scope="col" class="govuk-table__header">Submitted by</th>
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Response</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-width-one-third"><a href="#">Required hearing documents</a></td>
+                    <td class="govuk-table__cell">Buddy elf</td>
+                    <td class="govuk-table__cell">{{ -2 |  numericDate }}</td>
+                    <td class="govuk-table__cell">Response received</td>
+                </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell "><a href="#">What format do you need the evidence in?</a></td>
+                    <td class="govuk-table__cell">Buddy elf</td>
+                    <td class="govuk-table__cell">{{ -2 |  numericDate }}</td>
+                    <td class="govuk-table__cell">Response received</td>
+                </tr>
+            </tbody>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell "><a href="#">What is this fee for</a></td>
+                    <td class="govuk-table__cell">Buddy elf</td>
+                    <td class="govuk-table__cell">{{ -2 |  numericDate }}</td>
+                    <td class="govuk-table__cell">Response received</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <p><strong>I want to...</strong></p>
+        <ul class="govuk-list">
+            <li><a class="govuk-link" href="/raise-query">Send a message to the court</a></li>
+        </ul>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+            Contact us for help
+        </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
+</div>
+{% endblock %}
