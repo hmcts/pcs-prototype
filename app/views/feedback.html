@@ -6,8 +6,8 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-    <!-- Heading Content -->
     <div class="govuk-grid-column-two-thirds">
+    <!-- Heading Content -->
         <nav class="govuk-breadcrumbs" aria-label="Breadcrumb" >
             <ol class="govuk-breadcrumbs__list">
                 <li class="govuk-breadcrumbs__list-item">
@@ -17,24 +17,7 @@
             </ol>
         </nav>
         <h1 class="govuk-heading-l">Give feedback on Possession Claims</h1>
-    </div>
-
-    <!-- Sidebar Column -->
-    <div class="govuk-grid-column-one-third">
-        <details class="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    Contact us for help
-                </span>
-            </summary>
-            <div class="govuk-details__text">
-                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
-            </div>
-        </details>
-    </div>
-
-    <!-- Main Content -->
-    <div class="govuk-grid-column-two-thirds">
+        <!-- Main Content -->
         <h2 class="govuk-heading-m" style="margin-bottom: 10px;">Satisfaction survey</h2>
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -98,9 +81,23 @@
                 You can enter up to 800 characters
             </div>
         </div>
-        <a href="/" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+        <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
             Send feedback
         </a>
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
     </div>
 </div>
 {% endblock %}
