@@ -13,10 +13,10 @@
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link" href="/">Home</a>
                 </li>
-                <li class="govuk-breadcrumbs__list-item">Pay your claim fee</li>
+                <li class="govuk-breadcrumbs__list-item">Pay your fee</li>
             </ol>
         </nav>
-        <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Pay your claim fee</h1>
+        <h1 class="govuk-heading-l" style="margin-bottom: 10px;">Pay your fee</h1>
         <p class="govuk-body" style="margin-bottom: 5px;">Case number: {{ caseNumber }}</p>
         <p class="govuk-body">Property address: {{ propertyAddress }}</p>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -38,21 +38,61 @@
 
     <!-- Main Content -->
     <div class="govuk-grid-column-two-thirds">
-        <table class="govuk-table">
-            <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-                <td class="govuk-table__cell ">Claim fee</td>
-                <td class="govuk-table__cell govuk-!-text-align-right">{{ claimFee }}</td>
-            </tr>
-            <tr class="govuk-table__header">
-                <td class="govuk-table__cell ">Total fee amount</td>
-                <td class="govuk-table__cell govuk-!-text-align-right">{{ claimFee }}</td>
-            </tr>
-            </tbody>
-        </table>
-        <div style="padding-top: 20px;">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                        Type of fee
+                    </h2>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimFeeType" name="claimFeeType" type="radio"
+                            value="england">
+                        <label class="govuk-label govuk-radios__label" for="claimFeeType">
+                            Application
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimFeeType-2" name="claimFeeType" type="radio"
+                            value="scotland">
+                        <label class="govuk-label govuk-radios__label" for="claimFeeType-2">
+                            Enforcement
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimFeeType-3" name="claimFeeType" type="radio"
+                            value="wales">
+                        <label class="govuk-label govuk-radios__label" for="claimFeeType-3">
+                            Hearing
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="claimFeeType-4" name="claimFeeType" type="radio"
+                            value="northern-ireland">
+                        <label class="govuk-label govuk-radios__label" for="claimFeeType-4">
+                            Top-up
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="govuk-form-group">
+            <h2 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="feeAmount">
+                    What is the fee amount, in pounds?
+                </label>
+            </h2>
+            <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-input--width-5" id="feeAmount" name="feeAmount" type="text"
+                    spellcheck="false">
+            </div>
+        </div>
+
+        <div>
             <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-                Continue to payment ({{ claimFee }})
+                Continue to payment
             </a>
         </div>
     </div>
