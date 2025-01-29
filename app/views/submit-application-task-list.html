@@ -8,7 +8,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <!-- Heading Content -->
-    <h1 class="govuk-heading-l">Make a claim</h1>
+    <h1 class="govuk-heading-l">Make an application</h1>
 
     <!-- Main Content -->
     <h2 class="govuk-heading-s">Application complete</h2>
@@ -32,14 +32,14 @@
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">2. Prepare your claim</h2>
+    <h2 class="govuk-heading-m">2. Prepare your application</h2>
     {{ govukTaskList({
-      idPrefix: "prepareYourClaim",
+      idPrefix: "prepareYourApplication",
       items: [
-        { title: { text: "Completing your claim" }, href: "#", status: incomplete },
+        { title: { text: "Completing your application" }, href: "#", status: incomplete },
         { title: { text: "Your details" }, href: "#", status: incomplete },
         { title: { text: "Their details" }, href: "#", status: incomplete },
-        { title: { text: "Claim details" }, href: "#", status: incomplete }
+        { title: { text: "Application details" }, href: "#", status: incomplete }
       ]
     }) }}
 
@@ -47,7 +47,7 @@
     {{ govukTaskList({
       idPrefix: "submit",
       items: [
-        { title: { text: "Check and submit your claim" }, href: "#", status: incomplete }
+        { title: { text: "Check and submit your application" }, href: "#", status: incomplete }
       ]
     }) }}
   </div>
