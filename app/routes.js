@@ -85,6 +85,15 @@ router.get('/pay-fee', (req, res) => {
         {
             caseNumber: config.caseNumber,
             propertyAddress: config.propertyAddress,
+        }
+    );
+});
+
+router.get('/pay-claim-fee', (req, res) => {
+    res.render('pay-claim-fee',
+        {
+            caseNumber: config.caseNumber,
+            propertyAddress: config.propertyAddress,
             claimFee: config.claimFee,
         }
     );
