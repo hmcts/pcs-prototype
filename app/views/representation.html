@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Representation
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <!-- Main Content -->
+    <main class="govuk-grid-column-two-thirds">
+        <form class="form" method="post" action="/update-prototype" target="_blank">
+            {{ govukRadios({
+            name: "applicationType",
+            value: data['applicationType'],
+            fieldset: {
+            legend: {
+            text: "Who are you making the claim for? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+            }
+            },
+            items: [
+            {
+            value: "myself",
+            text: "Myself"
+            },
+            {
+            value: "solicitor",
+            text: "A client - I'm their solicitor"
+            },
+            {
+            value: "else",
+            text: "Someone else - I'm their litigation friend"
+            }
+            ]
+            }) }}
+
+            <div class="govuk-button-group">
+                {{ govukButton({
+                text: "Submit",
+                attributes: {
+                type: "submit"
+                }
+                }) }}
+
+                <a class="govuk-link" href="/">Cancel</a>
+            </div>
+        </form>
+    </main>
+</div>
+{% endblock %}

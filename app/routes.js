@@ -157,6 +157,10 @@ router.get('/raise-query-success', (req, res) => {
     );
 });
 
+router.get('/representation', (req, res) => {
+    res.render('representation');
+});
+
 router.get('/view-messages', (req, res) => {
     res.render('view-messages',
         {
