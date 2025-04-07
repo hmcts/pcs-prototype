@@ -5,17 +5,17 @@
 {% endblock %}
 
 {% block content %}
-<a href="/" class="govuk-back-link">Back</a>
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 <div class="govuk-grid-row govuk-!-margin-top-6">
     <!-- Main Content -->
     <main class="govuk-grid-column-two-thirds">
-        <form class="form" method="post" action="/update-prototype" target="_blank">
+        <form class="form" method="post" action="/representation/select-claimant">
             <span class="govuk-caption-l">Make a claim</span>
 
             {{ govukRadios({
-            name: "applicationType",
-            value: data['applicationType'],
+            name: "representationClaimantType",
+            value: data['representationClaimantType'],
             fieldset: {
             legend: {
             text: "Who are you making the claim for? ",

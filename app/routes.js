@@ -159,7 +159,23 @@ router.get('/raise-query-success', (req, res) => {
 
 router.get('/representation/select-claimant', (req, res) => {
     res.render('representation/select-claimant')
-  })
+})
+
+router.post('/representation/select-claimant', (req, res) => {
+    const representationClaimantType = req.body.representationClaimantType;
+    
+    if (representationClaimantType === 'else') {
+        res.redirect('/representation/litigation-friend');
+    } else {
+        // Store the selection in session and redirect to dashboard for other cases
+        req.session.data['representationClaimantType'] = representationClaimantType;
+        res.redirect('/');
+    }
+});
+
+router.get('/representation/litigation-friend', (req, res) => {
+    res.render('representation/litigation-friend')
+})
 
 router.get('/view-messages', (req, res) => {
     res.render('view-messages',
