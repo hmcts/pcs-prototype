@@ -56,8 +56,72 @@
                 }) }}
             </div>
             <p class="govuk-body">
-                <a href="#" class="govuk-link">Enter address manually</a>
+                <a href="#" class="govuk-link" id="manual-address-toggle">Enter address manually</a>
             </p>
+
+            <div id="manual-address-section" class="govuk-!-margin-top-4" style="display: none;">
+                {{ govukInput({
+                label: {
+                text: "Building and street"
+                },
+                id: "address-line-1",
+                name: "address-line-1"
+                }) }}
+
+                {{ govukInput({
+                label: {
+                text: "Address line 2 (Optional)"
+                },
+                id: "address-line-2",
+                name: "address-line-2"
+                }) }}
+
+                {{ govukInput({
+                label: {
+                text: "Address line 3 (Optional)"
+                },
+                id: "address-line-3",
+                name: "address-line-3"
+                }) }}
+
+                {{ govukInput({
+                label: {
+                text: "Town or City (Optional)"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "address-town",
+                name: "address-town"
+                }) }}
+
+                {{ govukInput({
+                label: {
+                text: "County (Optional)"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "address-county",
+                name: "address-county"
+                }) }}
+
+                {{ govukInput({
+                label: {
+                text: "Country (Optional)"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "address-country",
+                name: "address-country"
+                }) }}
+
+                {{ govukInput({
+                label: {
+                text: "Postcode"
+                },
+                classes: "govuk-input--width-10",
+                id: "address-postcode",
+                name: "address-postcode"
+                }) }}
+
+
+            </div>
         </div>
 
         <div class="govuk-button-group">
