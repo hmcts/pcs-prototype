@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (toggleLink && manualAddressSection) {
         toggleLink.addEventListener("click", function (e) {
             e.preventDefault();
-            const isHidden = manualAddressSection.style.display === "none";
-            manualAddressSection.style.display = isHidden ? "block" : "none";
+            const isHidden = manualAddressSection.classList.contains(
+                "govuk-!-display-none"
+            );
+            manualAddressSection.classList.toggle("govuk-!-display-none");
             toggleLink.textContent = isHidden
                 ? "Hide manual address"
                 : "Enter address manually";
