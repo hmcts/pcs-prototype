@@ -1,14 +1,18 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} – Representation
+{{ serviceName }} – Select claimant
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
+<a href="/" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
     <!-- Main Content -->
     <main class="govuk-grid-column-two-thirds">
         <form class="form" method="post" action="/update-prototype" target="_blank">
+            <span class="govuk-caption-l">Make a claim</span>
+
             {{ govukRadios({
             name: "applicationType",
             value: data['applicationType'],
@@ -47,5 +51,18 @@
             </div>
         </form>
     </main>
+    <!-- Sidebar Column -->
+    <div class="govuk-grid-column-one-third">
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Contact us for help
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            </div>
+        </details>
+    </div>
 </div>
 {% endblock %}
