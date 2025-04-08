@@ -1,150 +1,152 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} – Litigation friend
+    {{ serviceName }} – Litigation friend
 {% endblock %}
 
 {% block content %}
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-<div class="govuk-grid-row govuk-!-margin-top-6">
-    <!-- Main Content -->
-    <main class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l">Make a claim</span>
-        <h1 class="govuk-heading-l">What are your details as litigation friend?</h1>
-        <p class="govuk-body">You will need to submit the general application once you've made your claim. So a judge
-            can approve your request to be litigation friend for the claimant.</p>
-        <h2 class="govuk-heading-m">Litigation friend details</h2>
-
-        {{ govukInput({
-        label: {
-        text: "First name"
-        },
-        id: "first-name",
-        name: "first-name"
-        }) }}
-
-        {{ govukInput({
-        label: {
-        text: "Last name"
-        },
-        id: "last-name",
-        name: "last-name"
-        }) }}
-
-        {{ govukInput({
-        label: {
-        text: "Email address"
-        },
-        id: "email",
-        name: "email",
-        type: "email"
-        }) }}
-
-        <div class="govuk-form-group" id="address-lookup-section">
-            <h2 class="govuk-heading-m">Address details</h2>
-            <p class="govuk-body">Enter a UK postcode</p>
-            <div class="govuk-input__wrapper">
-                {{ govukInput({
-                classes: "govuk-input--width-10",
-                id: "postcode",
-                name: "postcode"
-                }) }}
-                {{ govukButton({
-                text: "Find address",
-                classes: "govuk-!-margin-left-2"
-                }) }}
-            </div>
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+        <!-- Main Content -->
+        <main class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Make a claim</span>
+            <h1 class="govuk-heading-l">What are your details as litigation friend</h1>
             <p class="govuk-body">
-                <a href="#" class="govuk-link" id="manual-address-toggle">Enter address manually</a>
+                You will need to submit the general application once you've made your claim. So a judge
+                can approve your request to be litigation friend for the claimant.
             </p>
+            <h2 class="govuk-heading-m">Litigation friend details</h2>
 
-            <div id="manual-address-section" class="govuk-!-margin-top-4 govuk-!-display-none">
-                {{ govukInput({
+            {{ govukInput({
                 label: {
-                text: "Building and street"
+                    text: "First name"
                 },
-                id: "address-line-1",
-                name: "address-line-1"
-                }) }}
-
-                {{ govukInput({
-                label: {
-                text: "Address line 2 (Optional)"
-                },
-                id: "address-line-2",
-                name: "address-line-2"
-                }) }}
-
-                {{ govukInput({
-                label: {
-                text: "Address line 3 (Optional)"
-                },
-                id: "address-line-3",
-                name: "address-line-3"
-                }) }}
-
-                {{ govukInput({
-                label: {
-                text: "Town or City (Optional)"
-                },
-                classes: "govuk-!-width-two-thirds",
-                id: "address-town",
-                name: "address-town"
-                }) }}
-
-                {{ govukInput({
-                label: {
-                text: "County (Optional)"
-                },
-                classes: "govuk-!-width-two-thirds",
-                id: "address-county",
-                name: "address-county"
-                }) }}
-
-                {{ govukInput({
-                label: {
-                text: "Country (Optional)"
-                },
-                classes: "govuk-!-width-two-thirds",
-                id: "address-country",
-                name: "address-country"
-                }) }}
-
-                {{ govukInput({
-                label: {
-                text: "Postcode"
-                },
-                classes: "govuk-input--width-10",
-                id: "address-postcode",
-                name: "address-postcode"
-                }) }}
-            </div>
-        </div>
-
-        <div class="govuk-button-group">
-            {{ govukButton({
-            text: "Submit",
-            attributes: {
-            type: "submit"
-            }
+                id: "first-name",
+                name: "first-name"
             }) }}
 
-            <a class="govuk-link" href="/">Cancel</a>
-        </div>
-    </main>
-    <!-- Sidebar Column -->
-    <div class="govuk-grid-column-one-third">
-        <details class="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    Contact us for help
-                </span>
-            </summary>
-            <div class="govuk-details__text">
-                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+            {{ govukInput({
+                label: {
+                    text: "Last name"
+                },
+                id: "last-name",
+                name: "last-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                    text: "Email address"
+                },
+                id: "email",
+                name: "email",
+                type: "email"
+            }) }}
+
+            <div class="govuk-form-group" id="address-lookup-section">
+                <h2 class="govuk-heading-m">Address details</h2>
+                <p class="govuk-body">Enter a UK postcode</p>
+                <div class="govuk-input__wrapper">
+                    {{ govukInput({
+                        classes: "govuk-input--width-10",
+                        id: "postcode",
+                        name: "postcode"
+                    }) }}
+                    {{ govukButton({
+                        text: "Find address",
+                        classes: "govuk-!-margin-left-2"
+                    }) }}
+                </div>
+                <p class="govuk-body">
+                    <a href="#" class="govuk-link" id="manual-address-toggle">Enter address manually</a>
+                </p>
+
+                <div id="manual-address-section" class="govuk-!-margin-top-4 govuk-!-display-none">
+                    {{ govukInput({
+                        label: {
+                            text: "Building and street"
+                        },
+                        id: "address-line-1",
+                        name: "address-line-1"
+                    }) }}
+
+                    {{ govukInput({
+                        label: {
+                            text: "Address line 2 (Optional)"
+                        },
+                        id: "address-line-2",
+                        name: "address-line-2"
+                    }) }}
+
+                    {{ govukInput({
+                        label: {
+                            text: "Address line 3 (Optional)"
+                        },
+                        id: "address-line-3",
+                        name: "address-line-3"
+                    }) }}
+
+                    {{ govukInput({
+                        label: {
+                            text: "Town or City (Optional)"
+                        },
+                        classes: "govuk-!-width-two-thirds",
+                        id: "address-town",
+                        name: "address-town"
+                    }) }}
+
+                    {{ govukInput({
+                        label: {
+                            text: "County (Optional)"
+                        },
+                        classes: "govuk-!-width-two-thirds",
+                        id: "address-county",
+                        name: "address-county"
+                    }) }}
+
+                    {{ govukInput({
+                        label: {
+                            text: "Country (Optional)"
+                        },
+                        classes: "govuk-!-width-two-thirds",
+                        id: "address-country",
+                        name: "address-country"
+                    }) }}
+
+                    {{ govukInput({
+                        label: {
+                            text: "Postcode"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "address-postcode",
+                        name: "address-postcode"
+                    }) }}
+                </div>
             </div>
-        </details>
+
+            <div class="govuk-button-group">
+                {{ govukButton({
+                    text: "Submit",
+                    attributes: {
+                        type: "submit"
+                    }
+                }) }}
+
+                <a class="govuk-link" href="/">Cancel</a>
+            </div>
+        </main>
+        <!-- Sidebar Column -->
+        <div class="govuk-grid-column-one-third">
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Contact us for help
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+                </div>
+            </details>
+        </div>
     </div>
-</div>
 {% endblock %}
