@@ -1,68 +1,68 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} – Select claimant
+    {{ serviceName }} – Select claimant
 {% endblock %}
 
 {% block content %}
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-<div class="govuk-grid-row govuk-!-margin-top-6">
-    <!-- Main Content -->
-    <main class="govuk-grid-column-two-thirds">
-        <form class="form" method="post" action="/representation/select-claimant">
-            <span class="govuk-caption-l">Make a claim</span>
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+        <!-- Main Content -->
+        <main class="govuk-grid-column-two-thirds">
+            <form class="form" method="post" action="/representation/select-claimant">
+                <span class="govuk-caption-l">Make a claim</span>
 
-            {{ govukRadios({
-            name: "representationClaimantType",
-            value: data['representationClaimantType'],
-            fieldset: {
-            legend: {
-            text: "Who are you making the claim for? ",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-            }
-            },
-            items: [
-            {
-            value: "myself",
-            text: "Myself"
-            },
-            {
-            value: "solicitor",
-            text: "A client - I'm their solicitor"
-            },
-            {
-            value: "else",
-            text: "Someone else - I'm their litigation friend"
-            }
-            ]
-            }) }}
-
-            <div class="govuk-button-group">
-                {{ govukButton({
-                text: "Submit",
-                attributes: {
-                type: "submit"
-                }
+                {{ govukRadios({
+                    name: "representationClaimantType",
+                    value: data['representationClaimantType'],
+                    fieldset: {
+                        legend: {
+                            text: "Who are you making the claim for? ",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--l"
+                        }
+                    },
+                    items: [
+                        {
+                            value: "myself",
+                            text: "Myself"
+                        },
+                        {
+                            value: "solicitor",
+                            text: "A client - I'm their solicitor"
+                        },
+                        {
+                            value: "else",
+                            text: "Someone else - I'm their litigation friend"
+                        }
+                    ]
                 }) }}
 
-                <a class="govuk-link" href="/">Cancel</a>
-            </div>
-        </form>
-    </main>
-    <!-- Sidebar Column -->
-    <div class="govuk-grid-column-one-third">
-        <details class="govuk-details">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    Contact us for help
-                </span>
-            </summary>
-            <div class="govuk-details__text">
-                For assistance, please call our helpline at 123-456-7890 or email help@example.com.
-            </div>
-        </details>
+                <div class="govuk-button-group">
+                    {{ govukButton({
+                        text: "Submit",
+                        attributes: {
+                            type: "submit"
+                        }
+                    }) }}
+
+                    <a class="govuk-link" href="/">Cancel</a>
+                </div>
+            </form>
+        </main>
+        <!-- Sidebar Column -->
+        <div class="govuk-grid-column-one-third">
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Contact us for help
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    For assistance, please call our helpline at 123-456-7890 or email help@example.com.
+                </div>
+            </details>
+        </div>
     </div>
-</div>
 {% endblock %}
