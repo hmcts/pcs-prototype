@@ -1,0 +1,31 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+    {{ serviceName }} – Alternative Service for Solicitors
+{% endblock %}
+
+{% block content %}
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+    }) }}
+
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Make a claim</span>
+
+            <h1 class="govuk-heading-l">You need to use a different service</h1>
+
+            <p class="govuk-body">Online private landlords can use this online service.</p>
+
+            <p class="govuk-body"> Solicitors and legal representatives should use <a href="#" class="govuk-link">MyHMCTS</a> instead.</p>
+
+            <div class="govuk-button-group govuk-!-margin-top-6">
+                {{ govukButton({
+                    text: "Close and return to case overview",
+                    href: "/"
+                }) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
